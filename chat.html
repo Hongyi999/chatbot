@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元旦聊天室</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chat.css">
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="background-animation">
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+    </div>
+    
+    <div class="chat-container">
+        <header class="chat-header">
+            <h1>🎊 元旦聊天室 🎊</h1>
+            <div class="user-info">
+                <span id="usernameDisplay">用户</span>
+                <button id="logoutBtn" class="btn-logout">退出</button>
+            </div>
+        </header>
+        
+        <div class="chat-main">
+            <div id="messagesContainer" class="messages-container">
+                <div class="welcome-message">
+                    <p>🎉 欢迎来到元旦聊天室！</p>
+                    <p>与AI助手开始对话，祝您新年快乐！</p>
+                </div>
+            </div>
+            
+            <div class="input-area">
+                <div class="input-wrapper">
+                    <input type="text" id="messageInput" placeholder="输入消息..." maxlength="1000">
+                    <button id="sendBtn" class="btn-send">发送</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="api.js"></script>
+    <script src="chat.js"></script>
+</body>
+</html>
+

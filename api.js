@@ -1,4 +1,7 @@
-const API_BASE_URL = 'http://localhost:5001/api';
+// 从配置文件读取API地址
+const API_BASE_URL = (typeof API_CONFIG !== 'undefined' && API_CONFIG.apiBaseUrl) 
+    ? API_CONFIG.apiBaseUrl 
+    : 'http://localhost:5001/api';
 
 // 通用API请求函数
 async function apiRequest(endpoint, options = {}) {

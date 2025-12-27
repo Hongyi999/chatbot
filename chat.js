@@ -34,7 +34,11 @@ async function checkAuth() {
 
 // 初始化WebSocket
 function initSocket() {
-    socket = io('http://localhost:5001', {
+    // 从配置文件读取WebSocket地址
+    const wsUrl = (typeof API_CONFIG !== 'undefined' && API_CONFIG.wsUrl) 
+        ? API_CONFIG.wsUrl 
+        : 'http://localhost:5001';
+    socket = io(wsUrl, {
         withCredentials: true,
         transports: ['websocket', 'polling']
     });
